@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoPunto | Asistente de ventas IA</title>
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="assets/logo.svg" alt="" width="40" height="40">
+                <div>
+                    <h2>TecnoPunto</h2>
+                    <span>Accesorios para celular 📱</span>
+                </div>
+            </div>
+
+            <button id="new-chat" class="new-chat">
+                + Nuevo chat
+            </button>
+
+            <div class="info">
+                <p class="sidebar-label">Qué vendemos</p>
+                <ul>
+                    <li>Fundas y vidrios templados</li>
+                    <li>Cargadores, cables y auriculares</li>
+                </ul>
+
+                <p class="sidebar-label">Envíos</p>
+                <ul>
+                    <li>Montevideo: moto en el día</li>
+                    <li>Interior: agencia DAC</li>
+                </ul>
+
+                <p class="sidebar-label">Pagos</p>
+                <ul>
+                    <li>Efectivo, transferencia, tarjeta</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="brand-tag">Local en el Centro de Montevideo</span>
+                <span>Lun a vie 10–19 · Sáb 10–14</span>
+            </div>
+        </aside>
+
+        <main class="chat">
+
+            <header class="chat-header">
+                <div class="avatar">TP</div>
+
+                <div>
+                    <h1>Asistente TecnoPunto</h1>
+                    <span class="status"><span class="dot"></span> En línea · responde al instante</span>
+                </div>
+
+                <button id="new-chat-mobile" class="new-chat-mobile" type="button" aria-label="Nuevo chat">+ Nuevo</button>
+            </header>
+
+            <section
+                id="messages"
+                class="messages"
+                aria-live="polite"
+                aria-label="Conversación"
+            ></section>
+
+            <form id="chat-form" class="chat-form">
+                <label class="sr-only" for="message-input">
+                    Escribí tu mensaje
+                </label>
+
+                <input
+                    type="text"
+                    id="message-input"
+                    placeholder="Preguntá por fundas, cargadores, envíos..."
+                    autocomplete="off"
+                    maxlength="1000"
+                    required
+                >
+
+                <button type="submit" id="send-button">
+                    Enviar
+                </button>
+            </form>
+
+            <p class="disclaimer">
+                Asistente con IA. Precio y stock final los confirma un vendedor.
+            </p>
+
+        </main>
+    </div>
+
+    <template id="welcome-template">
+        <div class="welcome">
+            <div class="welcome-icon">TP</div>
+
+            <h2>¡Hola! ¿Qué necesitás para tu celu?</h2>
+
+            <p>
+                Soy el asistente de TecnoPunto. Te ayudo con precios,
+                compatibilidad, garantía, envíos y formas de pago.
+            </p>
+
+            <div class="suggestions">
+                <button type="button" class="suggestion">¿Qué productos tienen?</button>
+                <button type="button" class="suggestion">¿Tienen funda para iPhone 15?</button>
+                <button type="button" class="suggestion">¿Cuánto tarda el envío?</button>
+                <button type="button" class="suggestion">¿Qué cubre la garantía?</button>
+            </div>
+        </div>
+    </template>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
