@@ -3,65 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TecnoPunto | Asistente de ventas IA</title>
+    <title>TecnoPunto | Accesorios para celular</title>
     <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <div class="app">
 
-        <aside class="sidebar">
-            <div class="brand">
-                <img src="assets/logo.svg" alt="" width="40" height="40">
-                <div>
-                    <h2>TecnoPunto</h2>
-                    <span>Accesorios para celular 📱</span>
-                </div>
-            </div>
+    <!-- Barra superior -->
+    <header class="topbar">
+        <a href="#inicio" class="logo">
+            <img src="assets/logo.svg" alt="" width="34" height="34">
+            <span>Tecno<b>Punto</b></span>
+        </a>
 
-            <button id="new-chat" class="new-chat">
-                + Nuevo chat
-            </button>
+        <nav class="nav">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#compra">Envíos y pagos</a>
+            <a href="#local">El local</a>
+        </nav>
 
-            <div class="info">
-                <p class="sidebar-label">Qué vendemos</p>
-                <ul>
-                    <li>Fundas y vidrios templados</li>
-                    <li>Cargadores, cables y auriculares</li>
-                </ul>
+        <a href="#asistente" class="nav-cta">Hablar con el asistente</a>
+    </header>
 
-                <p class="sidebar-label">Envíos</p>
-                <ul>
-                    <li>Montevideo: moto en el día</li>
-                    <li>Interior: agencia DAC</li>
-                </ul>
+    <!-- Portada + chat -->
+    <section id="inicio" class="hero">
+        <div class="hero-text">
+            <span class="tag">Centro de Montevideo · Envíos a todo el país</span>
 
-                <p class="sidebar-label">Pagos</p>
-                <ul>
-                    <li>Efectivo, transferencia, tarjeta</li>
-                </ul>
-            </div>
+            <h1>Todo lo que tu celu necesita, <em>en un solo punto.</em></h1>
 
-            <div class="sidebar-footer">
-                <span class="brand-tag">Local en el Centro de Montevideo</span>
-                <span>Lun a vie 10–19 · Sáb 10–14</span>
-            </div>
-        </aside>
+            <p>
+                Fundas, vidrios templados, cargadores y más. Preguntale a nuestro
+                asistente con IA por precios, compatibilidad o envíos y te responde al instante.
+            </p>
 
-        <main class="chat">
+            <ul class="hero-points">
+                <li><strong>3 meses</strong> de garantía</li>
+                <li><strong>En el día</strong> en Montevideo</li>
+                <li><strong>Gratis</strong> colocación de vidrio</li>
+            </ul>
+        </div>
 
-            <header class="chat-header">
-                <div class="avatar">TP</div>
-
-                <div>
-                    <h1>Asistente TecnoPunto</h1>
-                    <span class="status"><span class="dot"></span> En línea · responde al instante</span>
+        <!-- Chat -->
+        <div id="asistente" class="chat-card">
+            <div class="chat-top">
+                <div class="bot-face" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><rect x="4" y="7" width="16" height="12" rx="4"/><circle cx="9.5" cy="13" r="1.4"/><circle cx="14.5" cy="13" r="1.4"/><path d="M12 7V4"/><circle cx="12" cy="3.5" r="1"/></svg>
                 </div>
 
-                <button id="new-chat-mobile" class="new-chat-mobile" type="button" aria-label="Nuevo chat">+ Nuevo</button>
-            </header>
+                <div class="chat-title">
+                    <h2>Asistente TecnoPunto</h2>
+                    <span class="status"><span class="dot"></span> Disponible ahora</span>
+                </div>
+
+                <button id="new-chat" class="new-chat" type="button" title="Empezar de nuevo">Reiniciar</button>
+            </div>
 
             <section
                 id="messages"
@@ -78,33 +80,166 @@
                 <input
                     type="text"
                     id="message-input"
-                    placeholder="Preguntá por fundas, cargadores, envíos..."
+                    placeholder="Escribí tu consulta..."
                     autocomplete="off"
                     maxlength="1000"
                     required
                 >
 
-                <button type="submit" id="send-button">
-                    Enviar
+                <button type="submit" id="send-button" aria-label="Enviar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
                 </button>
             </form>
 
             <p class="disclaimer">
-                Asistente con IA. Precio y stock final los confirma un vendedor.
+                Respuestas generadas con IA. Precio y stock final los confirma un vendedor.
             </p>
+        </div>
+    </section>
 
-        </main>
-    </div>
+    <!-- Catálogo -->
+    <section id="catalogo" class="section">
+        <div class="section-head">
+            <span class="kicker">Catálogo</span>
+            <h2>Lo más pedido</h2>
+            <p>Tocá "Consultar" en cualquier producto y el asistente te cuenta si sirve para tu modelo.</p>
+        </div>
+
+        <div class="products">
+            <article class="product">
+                <div class="product-img c1">
+                    <svg viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="38" rx="5"/><circle cx="20" cy="12" r="2.5"/></svg>
+                </div>
+                <h3>Funda de silicona</h3>
+                <p class="price">$490</p>
+                <button class="ask" data-question="¿Tienen funda de silicona para mi celular?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c2">
+                    <svg viewBox="0 0 48 48"><rect x="13" y="5" width="22" height="38" rx="6"/><path d="M13 13h3M13 35h3M32 13h3M32 35h3"/></svg>
+                </div>
+                <h3>Funda antigolpe</h3>
+                <p class="price">$690</p>
+                <button class="ask" data-question="¿Qué tal es la funda antigolpe?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c3">
+                    <svg viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="38" rx="5" stroke-dasharray="3 3"/><path d="M19 15l6-6M19 22l10-10"/></svg>
+                </div>
+                <h3>Funda transparente</h3>
+                <p class="price">$390</p>
+                <button class="ask" data-question="¿Tienen funda transparente?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c4">
+                    <svg viewBox="0 0 48 48"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M18 14l12 12M18 22l8 8"/></svg>
+                </div>
+                <h3>Vidrio templado</h3>
+                <p class="price">$390</p>
+                <button class="ask" data-question="¿Cuánto sale el vidrio templado y me lo colocan?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c5">
+                    <svg viewBox="0 0 48 48"><rect x="13" y="12" width="22" height="22" rx="4"/><path d="M19 12V6M29 12V6M24 34v8M25 18l-4 6h6l-4 6"/></svg>
+                </div>
+                <h3>Cargador rápido 20W</h3>
+                <p class="price">$890</p>
+                <button class="ask" data-question="¿El cargador rápido de 20W sirve para mi celular?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c1">
+                    <svg viewBox="0 0 48 48"><rect x="8" y="6" width="8" height="12" rx="2"/><rect x="32" y="30" width="8" height="12" rx="2"/><path d="M12 18v8c0 6 4 8 12 8s12-2 12-8v-2"/></svg>
+                </div>
+                <h3>Cable USB-C / Lightning</h3>
+                <p class="price">$290 – $350</p>
+                <button class="ask" data-question="¿Qué cables tienen y cuánto salen?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c2">
+                    <svg viewBox="0 0 48 48"><path d="M10 28v-4a14 14 0 0 1 28 0v4"/><rect x="7" y="27" width="8" height="13" rx="3"/><rect x="33" y="27" width="8" height="13" rx="3"/></svg>
+                </div>
+                <h3>Auriculares bluetooth</h3>
+                <p class="price">$1.290</p>
+                <button class="ask" data-question="¿Los auriculares bluetooth funcionan con cualquier celular?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c3">
+                    <svg viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="34" rx="5"/><path d="M20 4h8M18 20h12M18 26h12M18 32h7"/></svg>
+                </div>
+                <h3>Power bank 10.000 mAh</h3>
+                <p class="price">$1.190</p>
+                <button class="ask" data-question="¿Cuántas cargas da la batería externa de 10.000 mAh?">Consultar</button>
+            </article>
+
+            <article class="product">
+                <div class="product-img c4">
+                    <svg viewBox="0 0 48 48"><rect x="17" y="5" width="14" height="25" rx="3"/><path d="M13 12v14h4M35 12v14h-4M24 30v6"/><circle cx="24" cy="39" r="3"/><path d="M16 44h16"/></svg>
+                </div>
+                <h3>Soporte para auto</h3>
+                <p class="price">$590</p>
+                <button class="ask" data-question="¿Cómo es el soporte de celular para auto?">Consultar</button>
+            </article>
+        </div>
+    </section>
+
+    <!-- Envíos, pagos y garantía -->
+    <section id="compra" class="section band">
+        <div class="section-head">
+            <span class="kicker">Comprar es fácil</span>
+            <h2>Envíos, pagos y garantía</h2>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="num">01</span>
+                <h3>Envíos</h3>
+                <p>Montevideo: moto en el día ($150) si confirmás antes de las 15:00. Interior: agencia DAC. O retirás gratis en el local.</p>
+            </div>
+
+            <div class="feature">
+                <span class="num">02</span>
+                <h3>Pagos</h3>
+                <p>Efectivo, transferencia bancaria, Mercado Pago y tarjeta de débito o crédito en el local.</p>
+            </div>
+
+            <div class="feature">
+                <span class="num">03</span>
+                <h3>Garantía y cambios</h3>
+                <p>3 meses por fallas de fábrica con tu comprobante. Cambios dentro de los 7 días, sin uso y en su caja.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local -->
+    <section id="local" class="section local">
+        <div>
+            <span class="kicker">Visitanos</span>
+            <h2>Local en el Centro de Montevideo</h2>
+            <p>Lunes a viernes de 10 a 19 h · Sábados de 10 a 14 h · Domingos cerrado.</p>
+        </div>
+
+        <a href="#asistente" class="btn">Consultar ahora</a>
+    </section>
+
+    <footer class="footer">
+        <span>© TecnoPunto · Accesorios para celular</span>
+        <span>Proyecto Parcial 2 · Inteligencia Artificial</span>
+    </footer>
 
     <template id="welcome-template">
         <div class="welcome">
-            <div class="welcome-icon">TP</div>
-
-            <h2>¡Hola! ¿Qué necesitás para tu celu?</h2>
+            <p class="welcome-title">¡Hola! 👋 ¿En qué te ayudo?</p>
 
             <p>
-                Soy el asistente de TecnoPunto. Te ayudo con precios,
-                compatibilidad, garantía, envíos y formas de pago.
+                Te respondo sobre precios, compatibilidad, garantía,
+                envíos y formas de pago.
             </p>
 
             <div class="suggestions">

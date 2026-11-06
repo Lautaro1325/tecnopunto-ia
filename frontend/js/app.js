@@ -2,7 +2,6 @@ const chatForm = document.getElementById("chat-form");
 const messageInput = document.getElementById("message-input");
 const messagesContainer = document.getElementById("messages");
 const newChatButton = document.getElementById("new-chat");
-const newChatMobile = document.getElementById("new-chat-mobile");
 const welcomeTemplate = document.getElementById("welcome-template");
 
 // Historial de la conversación (para que la IA recuerde lo que se habló)
@@ -110,6 +109,16 @@ function newChat() {
 }
 
 newChatButton.addEventListener("click", newChat);
-newChatMobile.addEventListener("click", newChat);
+
+// Botones "Consultar" del catálogo: llevan al chat y mandan la pregunta
+document.querySelectorAll(".ask").forEach((button) => {
+    button.addEventListener("click", () => {
+        const question = button.dataset.question;
+
+        document.getElementById("asistente").scrollIntoView({ behavior: "smooth" });
+        addMessage(question, "user");
+        sendMessage(question);
+    });
+});
 
 showWelcome();
